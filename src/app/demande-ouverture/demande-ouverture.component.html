@@ -1,3 +1,36 @@
-<p>
-  demande-ouverture works!
-</p>
+<div class="container">
+    <h2>Bienvenue {{user?.username}}</h2>
+    <form>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Demandes Ouverture Numero</th>
+                    <th scope="col">A Traiter</th>
+                    <th scope="col">Conseiller</th>
+                    <th scope="col">Affectation</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let demande of listDemandeOuverture">
+                <tr>
+                    <td> {{demande.id}} </td>
+                    <td>{{demande.atraiter}}</td>
+                    <td>{{demande.conseiller}}</td>
+                    <td><input type="checkbox" value="{{demande.id}}"> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+        <h4> Conseillers</h4>
+        <div>
+            <select *ngFor="let conseiller of listConseiller">
+      <option value="{{conseiller.id}}">{{conseiller.nom}} {{conseiller.prenome}}</option>
+     </select>
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn btn-primary">Affecta</button>
+        </div>
+
+    </form>
+</div>

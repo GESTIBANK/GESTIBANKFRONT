@@ -20,6 +20,12 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth-guard';
 import { CreateCompteComponent } from './create-compte/create-compte.component';
 import { DemandeOuvertureComponent } from './demande-ouverture/demande-ouverture.component';
+import { MouvementComponent } from './mouvement/mouvement.component';
+import { ClientComponent } from './client/client/client.component';
+import { AdminComponent } from 'src/app/admin/admin/admin.component';
+import { ConseillerComponent } from './conseiller/conseiller/conseiller.component';
+
+
 
 
 @NgModule({
@@ -37,6 +43,11 @@ import { DemandeOuvertureComponent } from './demande-ouverture/demande-ouverture
     LoginComponent,
     CreateCompteComponent,
     DemandeOuvertureComponent,
+    CompteComponent,
+    MouvementComponent,
+    ClientComponent,
+    AdminComponent,
+    ConseillerComponent
 
   ],
   imports: [
@@ -44,7 +55,7 @@ import { DemandeOuvertureComponent } from './demande-ouverture/demande-ouverture
     AppRoutingModule,
     HttpClientModule,
     FormsModule
-    
+
   ],
   providers: [UserService,OperationService],
   bootstrap: [AppComponent]

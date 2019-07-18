@@ -5,19 +5,19 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  isloggedIn:boolean=false;
-  
-  constructor() {   
-    this.isAuthenticated();   
+  isloggedIn = false;
+
+  constructor() {
+    this.isAuthenticated();
    }
 
-  auth(){    
-     return this.isloggedIn=true;     
+  auth() {
+     return this.isloggedIn = true;
   }
-  disc(){    
-    return this.isloggedIn=false;    
+  disc() {
+    return this.isloggedIn = false;
   }
-  isAuthenticated(){
+  isAuthenticated() {
      return this.isloggedIn;
 
   }
