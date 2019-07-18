@@ -11,7 +11,7 @@ export class UserComponent implements OnInit {
   child3Shown:boolean=true;
   @Output() message= new EventEmitter<String>();
   @Output() editUser= new EventEmitter<boolean>();
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     console.log(this.userService.getClientById(2));

@@ -19,6 +19,8 @@ import { OperationService } from './operation.service';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth-guard';
 import { CreateCompteComponent } from './create-compte/create-compte.component';
+import { DemandeOuvertureComponent } from './demande-ouverture/demande-ouverture.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { CreateCompteComponent } from './create-compte/create-compte.component';
     FooterComponent,
     CompteComponent,
     LoginComponent,
-    CreateCompteComponent
+    CreateCompteComponent,
+    DemandeOuvertureComponent,
+
   ],
   imports: [
     BrowserModule,
