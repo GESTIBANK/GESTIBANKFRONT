@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Bienvenue {{user?.username}}</h2>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id Operation</th>
+                <th scope="col">Mouvement</th>
+                <th scope="col">Date</th>
+                <th scope="col">Montant</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let op of operations">
+            <tr>
+                <td> {{op.id}} </td>
+                <div *ngIf="op.type">
+                    <td>Debit</td>
+                </div>
+                <div *ngIf="!op.type">
+                    <td>Credit</td>
+                </div>
+                <td>{{op.date}}</td>
+                <td>{{op.montant | currency:'EUR'}} </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2 *ngIf="solde<0" class="alert-danger">Ton solde est de : {{solde | currency:'EUR'}}</h2>
+    <h2 *ngIf="solde>0" class="alert-success">Ton solde est de : {{solde | currency:'EUR'}}</h2>
+</div>
