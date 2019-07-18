@@ -1,6 +1,3 @@
 export class Login {
-     userName;
-     password;
-
-
+constructor(public userName="", public password=""){}
 }

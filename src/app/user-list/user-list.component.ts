@@ -13,10 +13,10 @@ export class UserListComponent implements OnInit, OnChanges {
   child1Shown: boolean=true;
   child2Shown: boolean=false;
   child3Shown: boolean=true;
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.userList= this.userService.getUsers();
+   
     }
     
     ngOnChanges(){

@@ -11,11 +11,11 @@ export class UserComponent implements OnInit {
   child3Shown:boolean=true;
   @Output() message= new EventEmitter<String>();
   @Output() editUser= new EventEmitter<boolean>();
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit() {
-    console.log(this.userService.getClientById(2));
-    console.log(this.userService.login());
+   
+  
   
   }
   edit(){
@@ -25,7 +25,7 @@ export class UserComponent implements OnInit {
   }
 delete(id){
  
-  this.message.emit(this.userService.delete(id));
+ 
   
 }
 }

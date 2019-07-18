@@ -14,23 +14,18 @@ export class AddUserComponent implements OnInit {
   user: User;
   nextId;
   message: String;
-  constructor(private userService: UserService, private route: Router) { 
-    this.user=  new User(0, '','','');
+  constructor( private route: Router) { 
+   
   }
 
   ngOnInit() {
-    this.user.id= this.userService.returnId()+1;
   }
 
-  addUser(){
-    this.nextId= this.userService.returnId();
-    this.message =this.userService.addUser(this.user);
-    this.route.navigateByUrl('/users');
+  addUser() {
    
-    window.setTimeout(()=>{
-      this.message=null;
+   
      
-  }, 3000);
+ 
   }
 
 

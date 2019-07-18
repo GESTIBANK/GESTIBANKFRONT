@@ -11,17 +11,13 @@ import { UserService } from '../user.service';
 export class ShowUserComponent implements OnInit {
   user: User;
   listOperation: any[];
-  constructor(private route: ActivatedRoute, private userService: UserService) { 
-    this.user= new User(0,'','','');
+  constructor(private route: ActivatedRoute) { 
+   
   }
 
   ngOnInit() {
     
-    this.route.parent.params.subscribe(params=> {
-      
-      this.user= this.userService.getUser(params.id);
-     
-    })
+   
     
   }
 

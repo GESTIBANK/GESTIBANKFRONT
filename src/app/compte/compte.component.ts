@@ -14,15 +14,11 @@ export class CompteComponent implements OnInit {
   operations: Operation[];
   user: User;
   solde: any;
-  constructor(private opService: OperationService, private route: ActivatedRoute, private userService: UserService) {
+  constructor(private opService: OperationService, private route: ActivatedRoute) {
     
    }
 
   ngOnInit() {
-    this.route.parent.params.subscribe(params=> {
-      this.operations = this.opService.getOperations(params.id)
-      this.solde= this.opService.getSolde(params.id);
-      this.user=this.userService.getUser(params.id);
-  });
+    
   }
 }

@@ -20,6 +20,9 @@
             <li class="nav-item" *ngIf="!auth.isAuthenticated()">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/login">Login</a>
             </li>
+            <li class="nav-item" *ngIf="loginP?.typeUser()==Conseiller">
+                <a class="nav-link" style="cursor: pointer;" routerLink="/login">Conseiller</a>
+            </li>
         </ul>
     </div>
 </nav>

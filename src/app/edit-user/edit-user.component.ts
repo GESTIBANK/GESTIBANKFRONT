@@ -13,23 +13,15 @@ export class EditUserComponent implements OnInit {
   child3Shown:boolean=true;
   id: any;
   
-  constructor(private route: ActivatedRoute, private userService: UserService) { 
-    this.user= new User(0,'','','');
+  constructor(private route: ActivatedRoute) { 
+   
   }
 
   ngOnInit() {
- this.child3Shown=!this.child3Shown    
-    this.route.parent.params.subscribe(routeParams => {
-   
-      this.user=this.userService.getUser(routeParams.id);
-    })
 
   }
 
   update(){
-   console.log(this.user);
-    this.userService.updateUser(this.user, this.user.id);
-
   }
 
 }
