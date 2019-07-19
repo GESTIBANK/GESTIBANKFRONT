@@ -6,10 +6,35 @@ import { of } from 'rxjs';
 })
 export class AuthServiceService {
   isloggedIn = false;
+  adminIsLoggIn = false;
+  conseillerIsLoggIn = false;
+  clientIsLoggIn = false;
 
   constructor() {
     this.isAuthenticated();
    }
+
+   authAdmin(){
+     this.adminIsLoggIn = true;
+   }
+
+   authConseiller(){
+    this.conseillerIsLoggIn = true;
+  }
+  authClient(){
+    this.clientIsLoggIn = true;
+  }
+
+  discAdmin(){
+    this.adminIsLoggIn = false;
+  }
+
+  discConseiller(){
+   this.conseillerIsLoggIn = false;
+ }
+ discClient(){
+   this.clientIsLoggIn = false;
+ }
 
   auth() {
      return this.isloggedIn = true;
@@ -19,6 +44,22 @@ export class AuthServiceService {
   }
   isAuthenticated() {
      return this.isloggedIn;
-
   }
+
+
+  isAdminIsLogged() {
+    return this.adminIsLoggIn;
+ }
+ isConseillerIsLogged() {
+  return this.conseillerIsLoggIn;
+}
+isClientIsLogged() {
+  return this.clientIsLoggIn;
+}
+discAll(){
+  this.isloggedIn = false;
+  this.clientIsLoggIn = false;
+  this.conseillerIsLoggIn = false;
+  this.adminIsLoggIn = false;
+}
 }

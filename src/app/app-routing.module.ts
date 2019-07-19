@@ -13,21 +13,33 @@ import { AdminComponent } from 'src/app/admin/admin/admin.component';
 
 import { DemandeOuvertureComponent } from './demande-ouverture/demande-ouverture.component';
 import { ConseillerComponent } from './conseiller/conseiller/conseiller.component';
+import { MouvementComponent } from './mouvement/mouvement.component';
+import { CreateCompteComponent } from './create-compte/create-compte.component';
+import { CreateDemandeOuvertureComponent } from './create-demande-ouverture/create-demande-ouverture.component';
+import { CreateConseillerComponent } from './create-conseiller/create-conseiller.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'admin', component: AdminComponent},
+  {path: 'creerCompte', component: CreateDemandeOuvertureComponent},
+  {path: 'creerCompte', component: HomeComponent},
+  {path: 'conseiller', component: ConseillerComponent},
+  {path: 'admin/create/conseiller', component: CreateConseillerComponent},  
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   {path: 'admin/demandesOuvertures', component: DemandeOuvertureComponent},
-  {path: 'admin/conseillers', component: ConseillerComponent, children: [
+
+  {path: 'admin/conseiller', component: ConseillerComponent, children: [
     {path: 'view/:id', component: ShowUserComponent},
     {path: 'edit/:id', component: EditUserComponent}
 
 ]},
   {path: 'users', component: UserListComponent, canActivate: [AuthGuard]},
-  {path: 'user/add', component: AddUserComponent, },
-  {path: 'client/:id', component: CompteComponent, children: [
-   { path: 'compte', component: CompteComponent}
+  {path: 'user/add', component: AddUserComponent },
+  {path: 'client', component: ClientComponent },
+  { path: 'compte/:id/transaction', component: MouvementComponent},
+  {path: 'client/:id', component: CompteComponent,  canActivate: [AuthGuard], children: [
+  { path: 'compte', component: CompteComponent},
+ 
   ]},
   {path: 'user/:id', component: UserListComponent,   children: [
       {path: 'view', component: ShowUserComponent},

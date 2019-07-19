@@ -21,10 +21,7 @@ export class CompteComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params=> {
-      //this.operations = this.opService.getOperations(params.id)
-      //this.solde= this.opService.getSolde(params.id);
-      console.log(params.id);
-      this.compteService.getComptes(params.id).subscribe(compt=> {
+        this.compteService.getComptes(params.id).subscribe(compt=> {
         this.comptes=JSON.parse(JSON.stringify(compt));
         console.log(this.comptes);
       });

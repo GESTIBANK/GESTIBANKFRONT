@@ -4,22 +4,22 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Id Operation</th>
-                <th scope="col">Mouvement</th>
                 <th scope="col">Date</th>
                 <th scope="col">Montant</th>
+                <th scope="col">Type Mouvement</th>
+
+
             </tr>
         </thead>
-        <tbody *ngFor="let op of operations">
+        <tbody *ngFor="let transaction of listTransaction">
             <tr>
-                <td> {{op.id}} </td>
-                <div *ngIf="op.type">
-                    <td>Debit</td>
-                </div>
-                <div *ngIf="!op.type">
-                    <td>Credit</td>
-                </div>
-                <td>{{op.date}}</td>
-                <td>{{op.montant | currency:'EUR'}} </td>
+                <td> {{transaction.numeroTransaction}} </td>
+                <td>{{transaction.dateMvt}}</td>
+                <td>{{transaction.montant}}</td>
+                <td>{{transaction.typeMvt}}</td>
+
+
+
             </tr>
 
         </tbody>

@@ -24,6 +24,8 @@ import { MouvementComponent } from './mouvement/mouvement.component';
 import { ClientComponent } from './client/client/client.component';
 import { AdminComponent } from 'src/app/admin/admin/admin.component';
 import { ConseillerComponent } from './conseiller/conseiller/conseiller.component';
+import { CreateDemandeOuvertureComponent } from './create-demande-ouverture/create-demande-ouverture.component';
+import { CreateConseillerComponent } from './create-conseiller/create-conseiller.component';
 
 
 
@@ -47,7 +49,9 @@ import { ConseillerComponent } from './conseiller/conseiller/conseiller.componen
     MouvementComponent,
     ClientComponent,
     AdminComponent,
-    ConseillerComponent
+    ConseillerComponent,
+    CreateDemandeOuvertureComponent,
+    CreateConseillerComponent
 
   ],
   imports: [

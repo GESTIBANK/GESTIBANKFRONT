@@ -30,13 +30,16 @@ export class LoginComponent implements OnInit {
       this.loginService.setUser(this.userReturn);
       switch (this.userReturn.userType) {
         case 'Admin':
+          this.auth.authAdmin();
           this.route.navigate(['/admin']);
           break;
         case 'Conseiller':
-          this.route.navigate(['/users']);
+            this.auth.authConseiller();
+          this.route.navigate(['/conseiller']);
           break;
         case 'Client':
-          this.route.navigate(['/users']);
+          this.auth.authClient();
+          this.route.navigate(['/client']);
           break;
         default:
           this.route.navigate(['/login']);

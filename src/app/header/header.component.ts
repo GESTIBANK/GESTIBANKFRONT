@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthServiceService } from '../auth-service.service';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,17 +10,18 @@ import { LoginService } from '../login.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private auth: AuthServiceService, private user: LoginService) {
+  constructor(private auth: AuthServiceService, private user: LoginService, private route: Router) {
 }
   ngOnInit() {
 
   }
 logout(){
-  console.log('test' + this.user.getUser().userType);
-  this.auth.disc();
+  
+  this.auth.discAll();
+ 
 }
 login(){
-  console.log("test" + this.user.getUser().userType);
+  
   this.auth.auth();
 }
 }

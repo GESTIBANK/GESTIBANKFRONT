@@ -1,0 +1,82 @@
+<div class="container">
+    <h1 class="text text-primary">
+        <i class="fa fa-user-plus "></i> </h1>
+    <div *ngIf="message">
+        {{message}}
+    </div>
+    <form #myform="ngForm" (ngSubmit)="createConseiller()">
+
+        <div class="form-group" [ngClass]="{'alert-danger': username.invalid && (username.dirty || username.touched) ,'alert-success': username.valid && (username.dirty || username.touched)}">
+            <label for="username">Nom </label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="conseiller.nom" required #username="ngModel">
+            <div class="form-control-feedback" *ngIf="username.errors && (username.dirty || username.touched)">
+                <p *ngIf="username.errors.required">Username is required</p>
+
+            </div>
+
+        </div>
+        <div class="form-group" [ngClass]="{'alert-danger': prenome.invalid && (prenome.dirty || prenome.touched) ,'alert-success': prenome.valid && (prenome.dirty || prenome.touched)}">
+            <label for="prenome">Prenom</label>
+            <input type="text" class="form-control" name="prenome" [(ngModel)]="conseiller.prenome" required #prenome="ngModel">
+
+            <div class="form-control-feedback" *ngIf="prenome.errors && (prenome.dirty || prenome.touched)">
+                <p *ngIf="prenome.errors.required">Prenom is required</p>
+
+            </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'alert-danger': pseudo.invalid && (pseudo.dirty || pseudo.touched) ,'alert-success': pseudo.valid && (pseudo.dirty || pseudo.touched)}">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" class="form-control" name="pseudo" [(ngModel)]="conseiller.pseudo" required #pseudo="ngModel">
+
+            <div class="form-control-feedback" *ngIf="pseudo.errors && (pseudo.dirty || pseudo.touched)">
+                <p *ngIf="pseudo.errors.required">Pseudo is required</p>
+
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'alert-danger': email.invalid && (email.dirty || email.touched) ,'alert-success': email.valid && (email.dirty || email.touched)}">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="conseiller.email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel">
+            <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+                <p *ngIf="email.errors.required">Email is required</p>
+                <p *ngIf="email.errors.pattern">Email is not a well format! Please verify it.</p>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'alert-danger': adresse.invalid && (adresse.dirty || adresse.touched) ,'alert-success': adresse.valid && (adresse.dirty || adresse.touched)}">
+            <label for="adresse">Adresse</label>
+            <input type="text" class="form-control" name="adresse" [(ngModel)]="conseiller.adresse" required #adresse="ngModel">
+
+            <div class="form-control-feedback" *ngIf="adresse.errors && (adresse.dirty || adresse.touched)">
+                <p *ngIf="adresse.errors.required">Adresse is required</p>
+
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'alert-danger': telephone.invalid && (telephone.dirty || telephone.touched) ,'alert-success': telephone.valid && (telephone.dirty || telephone.touched)}">
+            <label for="telephone">Telephone</label>
+            <input type="text" class="form-control" name="telephone" [(ngModel)]="conseiller.telephone" required #telephone="ngModel">
+            <div class="form-control-feedback" *ngIf="telephone.errors && (telephone.dirty || telephone.touched)">
+                <p *ngIf="telephone.errors.required">Telephone is required</p>
+
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'alert-danger': matricule.invalid && (matricule.dirty || matricule.touched) ,'alert-success': matricule.valid && (matricule.dirty || matricule.touched)}">
+            <label for="matricule">Matricule</label>
+            <input type="text" class="form-control" name="matricule" [(ngModel)]="conseiller.matricule" required #matricule="ngModel">
+            <div class="form-control-feedback" *ngIf="matricule.errors && (matricule.dirty || matricule.touched)">
+                <p *ngIf="matricule.errors.required">Matricule is required</p>
+
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'alert-danger': mdp.invalid && (mdp.dirty || mdp.touched) ,'alert-success': mdp.valid && (mdp.dirty || mdp.touched)}">
+            <label for="mdp">Mot de Pass</label>
+            <input type="text" class="form-control" name="mdp" [(ngModel)]="conseiller.mdp" required #mdp="ngModel">
+            <div class="form-control-feedback" *ngIf="mdp.errors && (mdp.dirty || mdp.touched)">
+                <p *ngIf="mdp.errors.required">Mdp is required</p>
+
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!myform.form.valid" class="btn btn-primary">Create Conseiller</button>
+
+    </form>
+</div>

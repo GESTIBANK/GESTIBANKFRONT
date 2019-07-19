@@ -18,7 +18,7 @@
                 <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/CreerCompte">Créer Compte <span class="sr-only"></span></a>
+                <a class="nav-link" routerLink="/creerCompte">Créer Compte <span class="sr-only"></span></a>
             </li>
 
             <!-- <li class="nav-item" *ngIf="auth.isAuthenticated()">
@@ -49,7 +49,7 @@
                 <a class="nav-link" style="cursor: pointer;" routerLink="/admin">Bienvenue {{user.getUser()?.pseudo}}</a>
             </li>
             <li class="nav-item" *ngIf="user.getUser()?.userType=='Admin'">
-                <a class="nav-link" style="cursor: pointer;" routerLink="/admin/conseillers">Conseillers</a>
+                <a class="nav-link" style="cursor: pointer;" routerLink="/admin/conseiller">Conseillers</a>
             </li>
             <li class="nav-item" *ngIf="user.getUser()?.userType=='Admin'">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/admin/demandesOuvertures">Demandes d'ouvertures</a>
@@ -57,9 +57,12 @@
             <li class="nav-item" *ngIf="!auth.isAuthenticated()">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/login">Login</a>
             </li>
+            <li class="nav-item" *ngIf="user.getUser()?.userType=='Admin'">
+                <a class="nav-link" style="cursor: pointer;" routerLink="/admin/create/conseiller">Create Conseiller</a>
+            </li>
             <!-- Authentifié -->
             <li class="nav-item" *ngIf="auth?.isAuthenticated()">
-                <a class="nav-link" style="cursor: pointer;" (click)="logout()">Logout</a>
+                <a class="nav-link" style="cursor: pointer;" (click)="logout()" href="/login">Logout</a>
             </li>
         </ul>
     </div>
