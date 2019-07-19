@@ -1,3 +1,5 @@
+import { Conseiller } from '../create-conseiller/conseiller';
+
 export class Client {
     id: number;
     nom: string;

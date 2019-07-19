@@ -27,6 +27,7 @@ import { ConseillerComponent } from './conseiller/conseiller/conseiller.componen
 import { CreateDemandeOuvertureComponent } from './create-demande-ouverture/create-demande-ouverture.component';
 import { CreateConseillerComponent } from './create-conseiller/create-conseiller.component';
 import { CreateClientComponent } from './create-client/create-client.component';
+import { ViewConseillerComponent } from './view-conseiller/view-conseiller.component';
 
 
 
@@ -53,7 +54,8 @@ import { CreateClientComponent } from './create-client/create-client.component';
     ConseillerComponent,
     CreateDemandeOuvertureComponent,
     CreateConseillerComponent,
-    CreateClientComponent
+    CreateClientComponent,
+    ViewConseillerComponent
 
   ],
   imports: [

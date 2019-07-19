@@ -12,6 +12,9 @@ getConseiller() {
   return this.httpConseiller.get(this.apiUrl + 'admin/conseiller');
 }
 
+getConseillerById(id) {
+  return this.httpConseiller.get(this.apiUrl + 'admin/conseiller/'+ id);
+}
 
 createCompte(compte) {
   return this.httpConseiller.post('http://localhost:8080/client/compte', compte);

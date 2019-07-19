@@ -1,6 +1,6 @@
-import { Client } from './client';
 import { Transaction } from './transaction';
 import { Notification } from './notification';
+import { Client } from './create-client/client';
 
 export class Compte {
 

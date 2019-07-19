@@ -17,10 +17,12 @@ import { MouvementComponent } from './mouvement/mouvement.component';
 import { CreateCompteComponent } from './create-compte/create-compte.component';
 import { CreateDemandeOuvertureComponent } from './create-demande-ouverture/create-demande-ouverture.component';
 import { CreateConseillerComponent } from './create-conseiller/create-conseiller.component';
+import { ViewConseillerComponent } from './view-conseiller/view-conseiller.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'conseiller/demandesOuvertures/accept', component: HomeComponent},
   {path: 'conseiller/demandesOuvertures', component: HomeComponent},
   {path: 'creerCompte', component: CreateDemandeOuvertureComponent},
   {path: 'creerCompte', component: HomeComponent},
@@ -28,12 +30,9 @@ const routes: Routes = [
   {path: 'admin/create/conseiller', component: CreateConseillerComponent},  
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   {path: 'admin/demandesOuvertures', component: DemandeOuvertureComponent},
+  {path: 'admin/conseiller', component: ConseillerComponent},
+  {path: 'admin/conseiller/:id/view', component: ViewConseillerComponent},
 
-  {path: 'admin/conseiller', component: ConseillerComponent, children: [
-    {path: 'view/:id', component: ShowUserComponent},
-    {path: 'edit/:id', component: EditUserComponent}
-
-]},
   {path: 'users', component: UserListComponent, canActivate: [AuthGuard]},
   {path: 'user/add', component: AddUserComponent },
   {path: 'client', component: ClientComponent },

@@ -25,7 +25,7 @@
             <td>
                 {{conseiller.email}}
             </td>
-            <td><a class="alert alert-success" [routerLink]="['/admin/conseillers/view', conseiller.id ]"><i class="fa fa-eye"></i> </a> </td>
+            <td><a class="alert alert-success" [routerLink]="['/admin/conseiller',conseiller.id, 'view' ]"><i class="fa fa-eye"></i> </a> </td>
             <td><a class="alert alert-primary" [routerLink]="['/admin/conseillers/edit', conseiller.id]"><i class="fa fa-edit"></i> </a> </td>
             <td><a class="alert alert-danger" style="cursor: pointer;" (click)="delete(conseiller.id)"><i class="fa fa-trash"></i> </a> </td>
 

@@ -19,6 +19,7 @@ export class CreateDemandeOuvertureComponent implements OnInit {
 
   createDemandeOuvertureCompte(){
     console.log(this.createCompte);
+    this.createCompte.piecesJustif=null;
    this.demandeOuvertureCompteService.newDemandeOuvertureCompte(this.createCompte).subscribe(
      response=>(console.log(response))
    );
