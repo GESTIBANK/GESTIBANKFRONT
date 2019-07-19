@@ -21,6 +21,7 @@ import { CreateConseillerComponent } from './create-conseiller/create-conseiller
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'conseiller/demandesOuvertures', component: HomeComponent},
   {path: 'creerCompte', component: CreateDemandeOuvertureComponent},
   {path: 'creerCompte', component: HomeComponent},
   {path: 'conseiller', component: ConseillerComponent},

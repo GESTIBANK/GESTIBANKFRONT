@@ -36,7 +36,7 @@
                 <a class="nav-link" style="cursor: pointer;" routerLink="/conseiller">Bienvenue {{user.getUser()?.pseudo}}</a>
             </li>
             <li class="nav-item" *ngIf="user.getUser()?.userType=='Conseiller'">
-                <a class="nav-link" style="cursor: pointer;" routerLink="/conseiller/ouvertureCompte">Demandes d'ouvertures</a>
+                <a class="nav-link" style="cursor: pointer;" routerLink="/conseiller/demandesOuvertures">Demandes d'ouvertures</a>
             </li>
             <li class="nav-item" *ngIf="user.getUser()?.userType=='Conseiller'">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/conseiller/listeClients">Clients</a>

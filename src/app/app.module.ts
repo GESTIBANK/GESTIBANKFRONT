@@ -26,6 +26,7 @@ import { AdminComponent } from 'src/app/admin/admin/admin.component';
 import { ConseillerComponent } from './conseiller/conseiller/conseiller.component';
 import { CreateDemandeOuvertureComponent } from './create-demande-ouverture/create-demande-ouverture.component';
 import { CreateConseillerComponent } from './create-conseiller/create-conseiller.component';
+import { CreateClientComponent } from './create-client/create-client.component';
 
 
 
@@ -51,7 +52,8 @@ import { CreateConseillerComponent } from './create-conseiller/create-conseiller
     AdminComponent,
     ConseillerComponent,
     CreateDemandeOuvertureComponent,
-    CreateConseillerComponent
+    CreateConseillerComponent,
+    CreateClientComponent
 
   ],
   imports: [
