@@ -2,20 +2,20 @@
     <div class="card">
         <img src="../../assets//img/person1.png" width="30%!important" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">User: {{conseiller.prenome | uppercase}} {{conseiller.nom | uppercase}}</h5>
+            <h5 class="card-title">User: {{conseiller?.prenome | uppercase}} {{conseiller?.nom | uppercase}}</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Id : {{conseiller.id}}</li>
-            <li class="list-group-item">Nom : {{conseiller.nom}}</li>
-            <li class="list-group-item">Prénom : {{conseiller.prenome}}</li>
-            <li class="list-group-item">Matricule : {{conseiller.matricule}}</li>
-            <li class="list-group-item">Email : {{conseiller.email}}</li>
-            <li class="list-group-item">Adresse : {{conseiller.adress}}</li>
-            <li class="list-group-item">Téléphone : {{conseiller.telephone}}</li>
-            <li class="list-group-item">Pseudo : {{conseiller.pseudo}}</li>
-            <li class="list-group-item">Prénom : {{conseiller.prenome}}</li>
-            <li class="list-group-item">Prénom : {{conseiller.prenome}}</li>
+            <li class="list-group-item">Id : {{conseiller?.id}}</li>
+            <li class="list-group-item">Nom : {{conseiller?.nom}}</li>
+            <li class="list-group-item">Prénom : {{conseiller?.prenome}}</li>
+            <li class="list-group-item">Matricule : {{conseiller?.matricule}}</li>
+            <li class="list-group-item">Email : {{conseiller?.email}}</li>
+            <li class="list-group-item">Adresse : {{conseiller?.adress}}</li>
+            <li class="list-group-item">Téléphone : {{conseiller?.telephone}}</li>
+            <li class="list-group-item">Pseudo : {{conseiller?.pseudo}}</li>
+            <li class="list-group-item">Prénom : {{conseiller?.prenome}}</li>
+            <li class="list-group-item">Prénom : {{conseiller?.prenome}}</li>
         </ul>
 
         <!-- Liste de clients :<br/>

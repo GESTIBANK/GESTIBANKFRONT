@@ -1,6 +1,6 @@
 <div class="container">
-    <h2>Bienvenue {{user?.username}}</h2>
-    <form>
+    <h2>Bienvenue </h2>
+    <form #myform="ngForm" (ngSubmit)="affecta(myform)">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -28,6 +28,8 @@
      </select>
         </div>
         <br>
+        <!-- <input type="hidden" [(ngModel)]="conseiller?.id">
+        <input type="hidden" [(ngModel)]="demande?.id"> -->
         <div>
             <button type="submit" class="btn btn-primary">Affecta</button>
         </div>

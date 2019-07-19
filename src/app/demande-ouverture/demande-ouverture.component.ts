@@ -9,7 +9,10 @@ import { ConseillerService } from '../conseiller/conseiller.service';
 })
 export class DemandeOuvertureComponent implements OnInit {
   listDemandeOuverture: any;
+  
   listConseiller: any;
+  conseiller:any
+  demande:any;
   constructor(private demandeOuvertureService: DemandesOuverturesService, private conseillerService: ConseillerService) { }
 
   ngOnInit() {
@@ -17,5 +20,11 @@ export class DemandeOuvertureComponent implements OnInit {
     .subscribe(demandes => {this.listDemandeOuverture = demandes; console.log(demandes); });
     this.conseillerService.getConseiller().subscribe(conseillers => {this.listConseiller = conseillers;  console.log(conseillers); });
   }
+  affecta(form){
+    console.log(form.value);
+
+  }
+
+
 
 }
