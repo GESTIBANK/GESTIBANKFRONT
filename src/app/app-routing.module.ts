@@ -25,6 +25,7 @@ import { AuthConseiller } from './auth/auth-conseiller';
 import { DemandeOuvertureCompte } from './create-demande-ouverture/demande-ouverture-compte';
 import { AuthClient } from './auth/auth-client';
 import { PageNotAuthorizedComponent } from './page-not-authorized/page-not-authorized.component';
+import { OperationComponent } from './operation/operation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -41,12 +42,8 @@ const routes: Routes = [
   { path: 'admin/conseiller/edit/:id', component: EditConseillerComponent, canActivate: [AuthAdmin] },
   { path: 'client', component: ClientComponent, canActivate: [AuthClient] },
   { path: 'client/compte/:id/transaction', component: MouvementComponent, canActivate: [AuthClient] },
-  {
-    path: 'client/:id', component: CompteComponent, canActivate: [AuthClient], children: [
-      { path: 'compte', component: CompteComponent },
-
-    ]
-  },
+  { path: 'client/compte/:id/operation', component: OperationComponent, canActivate: [AuthClient] },
+  { path: 'client/:id/compte', component: CompteComponent, canActivate: [AuthClient]},
   { path: 'notAuthorizedPage', component: PageNotAuthorizedComponent },
   { path: 'login', component: LoginComponent }
 ];
@@ -54,6 +51,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthAdmin, AuthConseiller]
+  providers: [AuthAdmin, AuthConseiller, AuthClient]
 })
 export class AppRoutingModule { }

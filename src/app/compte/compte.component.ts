@@ -14,20 +14,20 @@ export class CompteComponent implements OnInit {
   comptes: any;
   user: User;
   solde: any;
-  constructor(  private route: ActivatedRoute, private compteService: CompteService, private userService: UserService) {
+  constructor(  private route: ActivatedRoute, private compteService: CompteService) {
 
    }
 
   ngOnInit() {
     this.route.params.subscribe(params=> {
-        this.compteService.getComptes(params.id).subscribe(compt=> {
+        this.compteService.getComptesByIdClient(params.id).subscribe(compt=> {
         this.comptes=JSON.parse(JSON.stringify(compt));
         console.log(this.comptes);
       });
-      //this.user=this.userService.getUser(params.id);
+
   });
   }
   getComptes(id){
-    this.compteService.getComptes(id);
+    this.compteService.getComptesByIdClient(id);
   }
 }

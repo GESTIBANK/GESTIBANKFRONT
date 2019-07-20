@@ -30,6 +30,7 @@ import { ViewConseillerComponent } from './view-conseiller/view-conseiller.compo
 import { ConseillerHomeComponent } from './conseiller-home/conseiller-home.component';
 import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.component';
 import { PageNotAuthorizedComponent } from './page-not-authorized/page-not-authorized.component';
+import { OperationComponent } from './operation/operation.component';
 
 
 
@@ -60,7 +61,8 @@ import { PageNotAuthorizedComponent } from './page-not-authorized/page-not-autho
     ViewConseillerComponent,
     ConseillerHomeComponent,
     EditConseillerComponent,
-    PageNotAuthorizedComponent
+    PageNotAuthorizedComponent,
+    OperationComponent
 
   ],
   imports: [

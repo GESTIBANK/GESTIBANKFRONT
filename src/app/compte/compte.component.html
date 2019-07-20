@@ -10,6 +10,7 @@
                 <th scope="col">Seuil Remuneration</th>
                 <th scope="col">Solde</th>
                 <th scope="col">Transaction</th>
+                <th scope="col">Operation</th>
 
 
             </tr>
@@ -22,7 +23,8 @@
                 <td>{{compte.montantAgios}}</td>
                 <td>{{compte.seuilRemuneration}}</td>
                 <td>{{compte.solde}}</td>
-                <td><a class="alert alert-success" [routerLink]="['/compte/', compte.numeroCompte,'transaction' ]"><i class="fa fa-eye"></i> </a></td>
+                <td><a class="alert alert-success" [routerLink]="['/client/compte/', compte.numeroCompte,'transaction' ]"><i class="fa fa-eye"></i> </a></td>
+                <td><a class="alert alert-success" [routerLink]="['/client/compte/', compte.numeroCompte,'operation' ]"><i class="fa fa-money"></i></a></td>
             </tr>
 
         </tbody>

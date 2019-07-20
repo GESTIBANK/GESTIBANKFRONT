@@ -5,10 +5,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CompteService {
+  compte: any;
   apiUrl = 'http://localhost:8080/SpringWebService/';
   constructor(private httpCompte: HttpClient) { }
 
-  getComptes(id) {
+  getComptesByIdClient(id) {
     return this.httpCompte.get(this.apiUrl + 'client/' + id + '/compte');
   }
+
+
 }
