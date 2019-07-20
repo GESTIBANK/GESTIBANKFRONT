@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, forwardRef } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { UserService } from './user.service';
 import { HomeComponent } from './home/home.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ShowUserComponent } from './show-user/show-user.component';
@@ -72,7 +72,11 @@ import { OperationComponent } from './operation/operation.component';
     FormsModule
 
   ],
-  providers: [UserService],
+  providers: [UserService,  {
+    provide: NG_VALUE_ACCESSOR,
+    multi: true,
+    useExisting: forwardRef(() => DemandeOuvertureComponent),
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

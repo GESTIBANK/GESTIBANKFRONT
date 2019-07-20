@@ -4,7 +4,7 @@
     <h4>ici vous pouvez creer Votre demande pour l'ouverture d'un compte</h4>
     <h1 class="text text-primary">
         <i class="fa fa-user-plus "></i> </h1>
-    <div *ngIf="message">
+    <div *ngIf="message" [ngClass]="{'alert-success':message}">
         {{message}}
     </div>
     <form #myform="ngForm" (ngSubmit)="createDemandeOuvertureCompte(myform)">

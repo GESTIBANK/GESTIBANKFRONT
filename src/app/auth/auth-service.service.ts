@@ -31,7 +31,6 @@ export class AuthServiceService {
           break;
         case 'Client':
           this.userType = 'client';
-          // localStorage.setItem('user', JSON.stringify(userReturn));
           this.route.navigateByUrl('/client');
           break;
         default:
@@ -64,9 +63,9 @@ export class AuthServiceService {
 
 
   logout() {
-    this.userType = '';
+    this.userType = 'user';
+    localStorage.setItem('user', '{"userType": "user"}');
 
-    localStorage.removeItem('user');
   }
 
 }

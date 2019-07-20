@@ -12,7 +12,7 @@ export class OperationService {
   apiUrl = 'http://localhost:8080/SpringWebService/';
   constructor(private httOperation: HttpClient) { }
 
-sendOperation(operationS, id){
+sendOperation(operationS, id) {
   return this.httOperation.post(this.apiUrl + 'client/compte/' + id + '/transaction/debit', operationS);
 }
 setOperation(operationS) {

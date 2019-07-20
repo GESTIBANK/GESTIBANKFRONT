@@ -59,10 +59,10 @@
                 <a class="nav-link" style="cursor: pointer;" routerLink="/admin/create/conseiller">Create Conseiller</a>
             </li>
             <!-- Authentifié -->
-            <li class="nav-item" *ngIf="auth?.isAuthenticated()">
+            <li class="nav-item" *ngIf="login.getUser()?.userType !='user'">
                 <a class="nav-link" style="cursor: pointer;" (click)="logout()" href="/login">Logout</a>
             </li>
-            <li class="nav-item" *ngIf="!auth.isAuthenticated()">
+            <li class="nav-item" *ngIf="login.getUser()?.userType=='user'">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/login">Login</a>
             </li>
         </ul>

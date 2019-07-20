@@ -6,6 +6,7 @@
                 <th scope="col">Id Operation</th>
                 <th scope="col">Date</th>
                 <th scope="col">Montant</th>
+                <th scope="col">Libelle</th>
                 <th scope="col">Type Mouvement</th>
 
 
@@ -15,7 +16,9 @@
             <tr>
                 <td> {{transaction.numeroTransaction}} </td>
                 <td>{{transaction.dateMvt | date:'longDate'}} </td>
-                <td>{{transaction.montant | currency:'EUR'}}</td>
+                <td *ngIf="transaction.type=='Credit'"> + {{transaction.montant | currency:'EUR'}}</td>
+                <td *ngIf="transaction.type=='Debit'">- {{transaction.montant | currency:'EUR'}}</td>
+                <td> {{transaction.libelle}} </td>
                 <td>{{transaction.typeMvt}}</td>
 
             </tr>

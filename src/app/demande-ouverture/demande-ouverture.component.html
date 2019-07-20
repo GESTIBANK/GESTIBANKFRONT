@@ -1,5 +1,8 @@
 <div class="container">
     <h2>Bienvenue </h2>
+    <div *ngIf="message">
+        {{message}}
+    </div>
     <form #myform="ngForm" (ngSubmit)="affecta(myform)">
         <table class="table">
             <thead class="thead-dark">
@@ -15,7 +18,9 @@
                     <td> {{demande.id}} </td>
                     <td>{{demande.atraiter}}</td>
                     <td>{{demande.conseiller}}</td>
-                    <td><input type="checkbox" value="{{demande.id}}"> </td>
+                    <td> <input type="checkbox" value="{{demande.id}}" [(ngModel)]="demande.atraiter" [name]="demande.id" /></td>
+
+
                 </tr>
             </tbody>
         </table>
@@ -23,9 +28,10 @@
         <hr>
         <h4> Conseillers</h4>
         <div>
-            <select *ngFor="let conseiller of listConseiller">
-      <option value="{{conseiller.id}}">{{conseiller.nom}} {{conseiller.prenome}}</option>
-     </select>
+            <select class="form-control" [(ngModel)]="conseiller" (change)="onChange($event.target.value)" [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let conseiller of listConseiller" [value]="conseiller.id">{{conseiller.nom}} {{conseiller.prenome}}</option>
+            </select>
+
         </div>
         <br>
         <!-- <input type="hidden" [(ngModel)]="conseiller?.id">

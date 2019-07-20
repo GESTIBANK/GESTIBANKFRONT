@@ -9,20 +9,21 @@ import { DemandeOuvertureCompteService } from './demande-ouverture-compte.servic
   styleUrls: ['./create-demande-ouverture.component.css']
 })
 export class CreateDemandeOuvertureComponent implements OnInit {
+  message: string;
   createCompte: DemandeOuvertureCompte;
   constructor(private demandeOuvertureCompteService: DemandeOuvertureCompteService) {
-    this.createCompte= new DemandeOuvertureCompte ('','','',null, null);
-   }
+    this.createCompte = new DemandeOuvertureCompte('', '', '', null, null);
+  }
 
   ngOnInit() {
   }
 
-  createDemandeOuvertureCompte(){
+  createDemandeOuvertureCompte() {
     console.log(this.createCompte);
-    this.createCompte.piecesJustif=null;
-   this.demandeOuvertureCompteService.newDemandeOuvertureCompte(this.createCompte).subscribe(
-     response=>(console.log(response))
-   );
+    this.createCompte.piecesJustif = null;
+    this.demandeOuvertureCompteService.newDemandeOuvertureCompte(this.createCompte).subscribe(
+      response => (this.message = 'Votre demande as ete bien envoie')
+    );
   }
 
 }

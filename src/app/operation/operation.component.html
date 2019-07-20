@@ -18,7 +18,7 @@
         </div>
         <div class="form-group" [ngClass]="{'alert-danger': typeMvt.invalid && (typeMvt.dirty || typeMvt.touched) ,'alert-success': typeMvt.valid && (typeMvt.dirty || typeMvt.touched)}">
             <label for="typeMvt">Transaction Type</label>
-            <select name="typeMvt" [(ngModel)]="operation.typeMvt" required #typeMvt="ngModel">
+            <select name="typeMvt" [(ngModel)]="operation.typeMvt" name="typeMvt" id="typeMvt" required #typeMvt="ngModel">
           <option value="VIREMENT">Virement</option>
           <option value="POS">Pos</option>
           <option value="BANCOMAT">BANCOMAT</option>
@@ -26,6 +26,10 @@
             <div class="form-control-feedback" *ngIf="typeMvt.errors && (typeMvt.dirty || typeMvt.touched)">
                 <p *ngIf="typeMvt.errors.required">Transaction type is required</p>
             </div>
+        </div>
+        <div *ngIf="typeMvt.value ==='VIREMENT'" class="form-group" style="width:50%">
+            <label class="label label-info" for="Mileage">Iban destinataire:</label>
+            <input class="form-control" type="text" name="iban" id="iban" />
         </div>
         <div class="form-group" [ngClass]="{'alert-danger': dateMvt.invalid && (dateMvt.dirty || dateMvt.touched) ,'alert-success': dateMvt.valid && (dateMvt.dirty || dateMvt.touched)}">
             <label for="dateMvt">Date Mvt</label>
