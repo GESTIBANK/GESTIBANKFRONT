@@ -12,21 +12,22 @@ export class LoginService {
   }
 
 
-  login(user) {
+   login(user) {
     const httpHedears = new HttpHeaders();
     httpHedears.append('Content-Type', 'application/json');
     httpHedears.append('Accept', '*/*');
     httpHedears.append('Accept', '*/*');
     httpHedears.append('Accept-Encoding','gzip, deflate');
     httpHedears.append('Connection', 'keep-alive');
-    return this.httpClient.post(this.apiUrl + 'login/', user, { headers: httpHedears });
+    return  this.httpClient.post(this.apiUrl + 'login/', user, { headers: httpHedears });
 
   }
 
   setUser(user) {
-     this.user = user;
+    localStorage.setItem('user', JSON.stringify(user));
+     //this.user = user;
   }
   getUser() {
-    return this.user ;
+    return JSON.parse(localStorage.getItem('user'));
  }
 }

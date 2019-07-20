@@ -24,28 +24,31 @@ import { AuthAdmin } from './auth/auth-admin';
 import { AuthConseiller } from './auth/auth-conseiller';
 import { DemandeOuvertureCompte } from './create-demande-ouverture/demande-ouverture-compte';
 import { AuthClient } from './auth/auth-client';
+import { PageNotAuthorizedComponent } from './page-not-authorized/page-not-authorized.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'conseiller/demandesOuvertures/accept', component: DemandeOuvertureCompte, canActivate: [AuthConseiller]},
-  {path: 'conseiller/demandesOuvertures', component: DemandeOuvertureComponent, canActivate: [AuthConseiller]},
-  {path: 'creerCompte', component: CreateDemandeOuvertureComponent},
-  {path: 'conseiller', component: ConseillerHomeComponent, canActivate: [AuthConseiller]},
-  {path: 'admin/create/conseiller', component: CreateConseillerComponent, canActivate: [AuthAdmin]},
-  {path: 'admin', component: AdminComponent, canActivate: [AuthAdmin] },
-  {path: 'admin/demandesOuvertures', component: DemandeOuvertureComponent, canActivate: [AuthAdmin]},
-  {path: 'admin/conseiller', component: ConseillerComponent, canActivate: [AuthAdmin]},
-  {path: 'admin/conseiller/:id/view', component: ViewConseillerComponent, canActivate: [AuthAdmin]},
-  {path: 'admin/conseiller/edit/:id', component: EditConseillerComponent, canActivate: [AuthAdmin]},
-  {path: 'client', component: ClientComponent,  canActivate: [AuthClient] },
-  { path: 'client/compte/:id/transaction', component: MouvementComponent,  canActivate: [AuthClient]},
-  {path: 'client/:id', component: CompteComponent,  canActivate: [AuthClient], children: [
-  { path: 'compte', component: CompteComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'conseiller/demandesOuvertures/accept', component: DemandeOuvertureCompte, canActivate: [AuthConseiller] },
+  { path: 'conseiller/demandesOuvertures', component: DemandeOuvertureComponent, canActivate: [AuthConseiller] },
+  { path: 'creerCompte', component: CreateDemandeOuvertureComponent },
+  { path: 'conseiller', component: ConseillerHomeComponent, canActivate: [AuthConseiller] },
+  { path: 'admin/create/conseiller', component: CreateConseillerComponent, canActivate: [AuthAdmin] },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthAdmin] },
+  { path: 'admin/demandesOuvertures', component: DemandeOuvertureComponent, canActivate: [AuthAdmin] },
+  { path: 'admin/conseiller', component: ConseillerComponent, canActivate: [AuthAdmin] },
+  { path: 'admin/conseiller/:id/view', component: ViewConseillerComponent, canActivate: [AuthAdmin] },
+  { path: 'admin/conseiller/edit/:id', component: EditConseillerComponent, canActivate: [AuthAdmin] },
+  { path: 'client', component: ClientComponent, canActivate: [AuthClient] },
+  { path: 'client/compte/:id/transaction', component: MouvementComponent, canActivate: [AuthClient] },
+  {
+    path: 'client/:id', component: CompteComponent, canActivate: [AuthClient], children: [
+      { path: 'compte', component: CompteComponent },
 
-  ]},
-
-  {path: 'login', component: LoginComponent}
+    ]
+  },
+  { path: 'notAuthorizedPage', component: PageNotAuthorizedComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

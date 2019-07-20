@@ -8,16 +8,13 @@ export class AuthClient implements CanActivate{
 
     }
     canActivate() {
-
-             if(!this.auth.isAuthenticated()){
-
-                this.router.navigate(['/login']);
-                return false;
-            }
-                return true;
-
-
-
-       }
+        if (this.auth.isAuthenticated() === 'client') {
+            return true;
+        } else {
+            console.log('false');
+            this.router.navigate(['/notAuthorizedPage']);
+            return false;
+        }
+    }
 
 }

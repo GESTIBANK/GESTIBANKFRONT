@@ -29,6 +29,7 @@ import { CreateClientComponent } from './create-client/create-client.component';
 import { ViewConseillerComponent } from './view-conseiller/view-conseiller.component';
 import { ConseillerHomeComponent } from './conseiller-home/conseiller-home.component';
 import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.component';
+import { PageNotAuthorizedComponent } from './page-not-authorized/page-not-authorized.component';
 
 
 
@@ -58,7 +59,8 @@ import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.compo
     CreateClientComponent,
     ViewConseillerComponent,
     ConseillerHomeComponent,
-    EditConseillerComponent
+    EditConseillerComponent,
+    PageNotAuthorizedComponent
 
   ],
   imports: [

@@ -9,33 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  userType: string;
-  constructor(private auth: AuthServiceService, private route: Router) {
+   constructor(private auth: AuthServiceService, private login: LoginService) {
   }
   ngOnInit() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    switch (user.userType) {
-      case 'Admin':
-        this.userType = 'Admin';
-        break;
-      case 'Conseiller':
-        this.userType = 'Conseiller';
-        break;
-      case 'Client':
-        this.userType = 'Client';
-        break;
-      default:
-        this.userType = 'User';
-    }
-
-
-
   }
   logout() {
-
     this.auth.logout();
-
-
   }
 
 }
