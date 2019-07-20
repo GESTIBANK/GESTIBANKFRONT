@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OperationService } from '../operation.service';
 import { ActivatedRoute } from '@angular/router';
-import { Operation } from '../operation';
+
 import { UserService } from '../user.service';
 import { User } from '../user';
 import { CompteService } from './compte.service';
@@ -15,7 +14,7 @@ export class CompteComponent implements OnInit {
   comptes: any;
   user: User;
   solde: any;
-  constructor( private opService: OperationService, private route: ActivatedRoute, private compteService: CompteService, private userService: UserService) {
+  constructor(  private route: ActivatedRoute, private compteService: CompteService, private userService: UserService) {
 
    }
 

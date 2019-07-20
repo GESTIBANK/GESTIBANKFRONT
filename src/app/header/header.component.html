@@ -25,44 +25,45 @@
                 <a class="nav-link" style="cursor: pointer;" (click)="/Profil">Profil</a>
             </li>-->
             <!-- Client -->
-            <li class="nav-item" *ngIf="user.getUser()?.userType=='Client'">
-                <a class="nav-link" style="cursor: pointer;" routerLink="/client">Bienvenue {{user.getUser()?.pseudo}}</a>
+            <li class="nav-item" *ngIf="userType=='Client'">
+                <a class="nav-link" style="cursor: pointer;" routerLink="/client">Bienvenue {{pseudo}}</a>
             </li>
-            <li class="nav-item" *ngIf="user.getUser()?.userType=='Client'">
-                <a class="nav-link" style="cursor: pointer;" [routerLink]=" ['client' ,user.getUser()?.id, 'compte']">Vos Comptes</a>
+            <li class="nav-item" *ngIf="userType=='Client'">
+                <a class="nav-link" style="cursor: pointer;" [routerLink]=" ['client' ,id, 'compte']">Vos Comptes</a>
             </li>
             <!-- Conseiller -->
-            <li class="nav-item" *ngIf="user.getUser()?.userType=='Conseiller'">
-                <a class="nav-link" style="cursor: pointer;" routerLink="/conseiller">Bienvenue {{user.getUser()?.pseudo}}</a>
+            <li class="nav-item" *ngIf="userType=='Conseiller'">
+                <a class="nav-link" style="cursor: pointer;" routerLink="/conseiller">Bienvenue {{pseudo}}</a>
             </li>
-            <li class="nav-item" *ngIf="user.getUser()?.userType=='Conseiller'">
+            <li class="nav-item" *ngIf="userType=='Conseiller'">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/conseiller/demandesOuvertures">Demandes d'ouvertures</a>
             </li>
-            <li class="nav-item" *ngIf="user.getUser()?.userType=='Conseiller'">
+            <li class="nav-item" *ngIf="userType=='Conseiller'">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/conseiller/listeClients">Clients</a>
             </li>
-            <li class="nav-item" *ngIf="user.getUser()?.userType=='Conseiller'">
+            <li class="nav-item" *ngIf="userType=='Conseiller'">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/conseiller/requetes">Requetes</a>
             </li>
             <!-- Administrateur-->
-            <li class="nav-item" *ngIf="user.getUser()?.userType=='Admin'">
-                <a class="nav-link" style="cursor: pointer;" routerLink="/admin">Bienvenue {{user.getUser()?.pseudo}}</a>
+            <li class="nav-item" *ngIf="userType=='Admin'">
+                <a class="nav-link" style="cursor: pointer;" routerLink="/admin">Bienvenue {{userType?.pseudo}}</a>
             </li>
-            <li class="nav-item" *ngIf="user.getUser()?.userType=='Admin'">
+            <li class="nav-item" *ngIf="userType=='Admin'">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/admin/conseiller">Conseillers</a>
             </li>
-            <li class="nav-item" *ngIf="user.getUser()?.userType=='Admin'">
+            <li class="nav-item" *ngIf="userType=='Admin'">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/admin/demandesOuvertures">Demandes d'ouvertures</a>
             </li>
-            <li class="nav-item" *ngIf="!auth.isAuthenticated()">
-                <a class="nav-link" style="cursor: pointer;" routerLink="/login">Login</a>
-            </li>
-            <li class="nav-item" *ngIf="user.getUser()?.userType=='Admin'">
+
+            <li class="nav-item" *ngIf="userType=='Admin'">
                 <a class="nav-link" style="cursor: pointer;" routerLink="/admin/create/conseiller">Create Conseiller</a>
             </li>
             <!-- Authentifié -->
             <li class="nav-item" *ngIf="auth?.isAuthenticated()">
                 <a class="nav-link" style="cursor: pointer;" (click)="logout()" href="/login">Logout</a>
+            </li>
+            <li class="nav-item" *ngIf="!auth.isAuthenticated()">
+                <a class="nav-link" style="cursor: pointer;" routerLink="/login">Login</a>
             </li>
         </ul>
     </div>

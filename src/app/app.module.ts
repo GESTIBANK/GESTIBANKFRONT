@@ -15,9 +15,8 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { ShowUserComponent } from './show-user/show-user.component';
 import { FooterComponent } from './footer/footer.component';
 import { CompteComponent } from './compte/compte.component';
-import { OperationService } from './operation.service';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './auth-guard';
+import { AuthGuard } from './auth/auth-guard';
 import { CreateCompteComponent } from './create-compte/create-compte.component';
 import { DemandeOuvertureComponent } from './demande-ouverture/demande-ouverture.component';
 import { MouvementComponent } from './mouvement/mouvement.component';
@@ -69,7 +68,7 @@ import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.compo
     FormsModule
 
   ],
-  providers: [UserService,OperationService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

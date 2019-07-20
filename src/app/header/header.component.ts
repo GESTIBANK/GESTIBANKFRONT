@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AuthServiceService } from '../auth-service.service';
-import { LoginService } from '../login.service';
+import { AuthServiceService } from '../auth/auth-service.service';
+import { LoginService } from '../login/login.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,19 +9,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private auth: AuthServiceService, private user: LoginService, private route: Router) {
-}
+  userType: string;
+  constructor(private auth: AuthServiceService, private route: Router) {
+  }
   ngOnInit() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    switch (user.userType) {
+      case 'Admin':
+        this.userType = 'Admin';
+        break;
+      case 'Conseiller':
+        this.userType = 'Conseiller';
+        break;
+      case 'Client':
+        this.userType = 'Client';
+        break;
+      default:
+        this.userType = 'User';
+    }
+
+
 
   }
-logout(){
-  
-  this.auth.discAll();
- 
-}
-login(){
-  
-  this.auth.auth();
-}
+  logout() {
+
+    this.auth.logout();
+
+
+  }
+
 }
