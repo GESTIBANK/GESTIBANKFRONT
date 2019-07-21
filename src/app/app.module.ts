@@ -31,6 +31,7 @@ import { ConseillerHomeComponent } from './conseiller-home/conseiller-home.compo
 import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.component';
 import { PageNotAuthorizedComponent } from './page-not-authorized/page-not-authorized.component';
 import { OperationComponent } from './operation/operation.component';
+import { DemandeOuvertureAssigneComponent } from './demande-ouverture-assigne/demande-ouverture-assigne.component';
 
 
 
@@ -62,7 +63,8 @@ import { OperationComponent } from './operation/operation.component';
     ConseillerHomeComponent,
     EditConseillerComponent,
     PageNotAuthorizedComponent,
-    OperationComponent
+    OperationComponent,
+    DemandeOuvertureAssigneComponent
 
   ],
   imports: [

@@ -26,12 +26,13 @@ import { DemandeOuvertureCompte } from './create-demande-ouverture/demande-ouver
 import { AuthClient } from './auth/auth-client';
 import { PageNotAuthorizedComponent } from './page-not-authorized/page-not-authorized.component';
 import { OperationComponent } from './operation/operation.component';
+import { DemandeOuvertureAssigneComponent } from './demande-ouverture-assigne/demande-ouverture-assigne.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'conseiller/demandesOuvertures/accept', component: DemandeOuvertureCompte, canActivate: [AuthConseiller] },
-  { path: 'conseiller/demandesOuvertures', component: DemandeOuvertureComponent, canActivate: [AuthConseiller] },
+  { path: 'conseiller/demandesOuvertures', component: DemandeOuvertureAssigneComponent, canActivate: [AuthConseiller] },
   { path: 'creerCompte', component: CreateDemandeOuvertureComponent },
   { path: 'conseiller', component: ConseillerHomeComponent, canActivate: [AuthConseiller] },
   { path: 'admin/create/conseiller', component: CreateConseillerComponent, canActivate: [AuthAdmin] },
