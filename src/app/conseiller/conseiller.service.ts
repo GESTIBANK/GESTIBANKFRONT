@@ -24,6 +24,10 @@ findCompte(id: number) {
   return this.httpConseiller.get('http://localhost:8080/client/' + id + '/compte');
 }
 
+deleteConseiller(id){
+ return this.httpConseiller.delete(this.apiUrl + 'admin/conseiller/' + id + '/delete');
+
+}
 //demandeOuvertureCompte(clientp: ClientPotentiel){
 //  return this.httpClient.post<DemandeOuverture>('http://localhost:8080/client/compte/demandeOuverture',clientp);
 //}

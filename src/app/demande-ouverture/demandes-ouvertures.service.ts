@@ -22,8 +22,14 @@ export class DemandesOuverturesService {
     return this.httpDemandeOuverture.post(this.apiUrl + 'admin/conseiller/' + idConseiller + '/affectationDemande', listDemande);
 
   }
-  getDemandeOuvertureConseiller(id){
+  getDemandeOuvertureConseiller(id) {
     return this.httpDemandeOuverture.get(this.apiUrl + 'conseiller/' + id + '/demandeOuverture');
+
+  }
+
+  assigne(id) {
+    return this.httpDemandeOuverture
+    .get(this.apiUrl + 'conseiller/demandeOuverture/' + id + '/validation');
 
   }
 }

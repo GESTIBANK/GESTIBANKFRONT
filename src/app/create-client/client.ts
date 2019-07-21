@@ -13,7 +13,7 @@ export class Client {
     revenuMens: number;
     piecesJustif: boolean;
     conseiller: Conseiller;
-
+    valide: boolean;
     constructor() {
 
     }

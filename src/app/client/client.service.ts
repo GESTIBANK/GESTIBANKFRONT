@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CreateClientService {
+export class ClientService {
   apiUrl = 'http://localhost:8080/SpringWebService/';
 
   constructor(private httpClient: HttpClient) { }
 
 
+getConseiller(id) {
+return this.httpClient.get(this.apiUrl + 'client/' + id + '/conseiller');
+}
 }

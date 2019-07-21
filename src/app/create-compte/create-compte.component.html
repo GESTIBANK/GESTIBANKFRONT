@@ -7,7 +7,7 @@
     <div *ngIf="message">
         {{message}}
     </div>
-    <form #myform="ngForm" (ngSubmit)="createCompte()">
+    <form #myform="ngForm" (ngSubmit)="createCompte(myform)">
         <div class="form-group">
             <label for="id">Id</label>
             <input type="text" class="form-control" disabled name="id" [(ngModel)]="createCompte.id">

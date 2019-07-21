@@ -3,7 +3,7 @@
     <div *ngIf="message">
         {{message}}
     </div>
-    <form #myform="ngForm" (ngSubmit)="affecta(myform)">
+    <form #myform="ngForm" (ngSubmit)="accept(myform)">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -30,7 +30,7 @@
         <br>
 
         <div>
-            <button type="submit" class="btn btn-primary">Valdee</button>
+            <button type="submit" class="btn btn-primary">Valide</button>
         </div>
 
     </form>

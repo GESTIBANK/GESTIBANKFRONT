@@ -9,17 +9,31 @@ import { Conseiller } from './conseiller';
   styleUrls: ['./create-conseiller.component.css']
 })
 export class CreateConseillerComponent implements OnInit {
-  conseiller: any
+  conseiller: any;
+  message: string;
   constructor(private conseillerCreateService: CreateConseillerService) {
-    this.conseiller= new Conseiller(0,'','','','','',null,'','',null,null);
-   }
+    this.conseiller = new Conseiller(0, '', '', '', '', '', null, '', '', null, null);
+  }
 
   ngOnInit() {
   }
+  msg(e) {
 
-  createConseiller(){
-    console.log( this.conseiller);
-    this.conseillerCreateService.createConseiller(this.conseiller).subscribe(result=> console.log(result));
+    this.message = e;
+    window.setTimeout(() => {
+      this.message = null;
+
+    }, 3000);
+
+  }
+  createConseiller(form) {
+    console.log(this.conseiller);
+    this.conseillerCreateService.createConseiller(this.conseiller).
+      subscribe(result => {
+        console.log(result); this.message = 'Le conseiller as ete bien enregistre';
+        window.setTimeout(() => {this.message = null; }, 5000);
+        form.reset();
+      });
   }
 
 }

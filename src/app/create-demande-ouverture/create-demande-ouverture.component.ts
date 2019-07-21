@@ -18,11 +18,11 @@ export class CreateDemandeOuvertureComponent implements OnInit {
   ngOnInit() {
   }
 
-  createDemandeOuvertureCompte() {
+  createDemandeOuvertureCompte(form) {
     console.log(this.createCompte);
     this.createCompte.piecesJustif = null;
     this.demandeOuvertureCompteService.newDemandeOuvertureCompte(this.createCompte).subscribe(
-      response => (this.message = 'Votre demande as ete bien envoie')
+      response => { (this.message = 'Votre demande as ete bien envoie'); form.reset(); }
     );
   }
 

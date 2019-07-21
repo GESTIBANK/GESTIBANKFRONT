@@ -32,6 +32,8 @@ import { EditConseillerComponent } from './edit-conseiller/edit-conseiller.compo
 import { PageNotAuthorizedComponent } from './page-not-authorized/page-not-authorized.component';
 import { OperationComponent } from './operation/operation.component';
 import { DemandeOuvertureAssigneComponent } from './demande-ouverture-assigne/demande-ouverture-assigne.component';
+import { ListClientComponent } from './list-client/list-client.component';
+import { ConseillerClientComponent } from './conseiller-client/conseiller-client.component';
 
 
 
@@ -64,7 +66,9 @@ import { DemandeOuvertureAssigneComponent } from './demande-ouverture-assigne/de
     EditConseillerComponent,
     PageNotAuthorizedComponent,
     OperationComponent,
-    DemandeOuvertureAssigneComponent
+    DemandeOuvertureAssigneComponent,
+    ListClientComponent,
+    ConseillerClientComponent
 
   ],
   imports: [

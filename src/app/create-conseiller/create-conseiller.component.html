@@ -1,10 +1,10 @@
 <div class="container">
     <h1 class="text text-primary">
         <i class="fa fa-user-plus "></i> </h1>
-    <div *ngIf="message">
-        {{message}}
+    <div *ngIf="message" [ngClass]="{'alert-success':message}">
+        <h1>{{message}}</h1>
     </div>
-    <form #myform="ngForm" (ngSubmit)="createConseiller()">
+    <form #myform="ngForm" (ngSubmit)="createConseiller(myform)">
 
         <div class="form-group" [ngClass]="{'alert-danger': username.invalid && (username.dirty || username.touched) ,'alert-success': username.valid && (username.dirty || username.touched)}">
             <label for="username">Nom </label>
@@ -69,7 +69,7 @@
         </div>
         <div class="form-group" [ngClass]="{'alert-danger': mdp.invalid && (mdp.dirty || mdp.touched) ,'alert-success': mdp.valid && (mdp.dirty || mdp.touched)}">
             <label for="mdp">Mot de Pass</label>
-            <input type="text" class="form-control" name="mdp" [(ngModel)]="conseiller.mdp" required #mdp="ngModel">
+            <input type="password" class="form-control" name="mdp" [(ngModel)]="conseiller.mdp" required #mdp="ngModel">
             <div class="form-control-feedback" *ngIf="mdp.errors && (mdp.dirty || mdp.touched)">
                 <p *ngIf="mdp.errors.required">Mdp is required</p>
 

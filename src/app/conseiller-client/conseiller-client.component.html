@@ -11,14 +11,10 @@
                 <th scope="col">Adress</th>
                 <th scope="col">Email</th>
                 <th scope="col">Show</th>
-                <th scope="col">Edit </th>
-                <th scope="col">Delete </th>
-
-
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let conseiller of listConseiller">
+            <tr>
                 <td>
                     {{conseiller.nom}}
                 </td>
@@ -30,9 +26,8 @@
                 <td>
                     {{conseiller.email}}
                 </td>
-                <td><a class="alert alert-success" [routerLink]="['/admin/conseiller',conseiller.id, 'view' ]"><i class="fa fa-eye"></i> </a> </td>
-                <td><a class="alert alert-primary" [routerLink]="['/admin/conseiller/edit', conseiller.id]"><i class="fa fa-edit"></i> </a> </td>
-                <td><a class="alert alert-danger" style="cursor: pointer;" (click)="delete(conseiller.id)"><i class="fa fa-trash"></i> </a> </td>
+                <td><a class="alert alert-success" [routerLink]="['/client/conseiller',conseiller.id, 'view' ]"><i class="fa fa-eye"></i> </a> </td>
+
 
             </tr>
         </tbody>

@@ -39,7 +39,8 @@ export class DemandeOuvertureComponent implements OnInit {
 
       }
     }
-    this.demandeOuvertureService.affecta(this.listDemandeOuvertureAffecte, this.conseillerId).subscribe(result => console.log(result));
+    this.demandeOuvertureService.affecta(this.listDemandeOuvertureAffecte, this.conseillerId)
+    .subscribe(result => {console.log(result); form.reset(); });
   }
 
 }
