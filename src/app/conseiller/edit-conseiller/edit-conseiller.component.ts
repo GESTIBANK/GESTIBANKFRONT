@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConseillerService } from '../conseiller/conseiller.service';
+import { ConseillerService } from '../conseiller.service';
 import { ActivatedRoute } from '@angular/router';
 import { Conseiller } from '../create-conseiller/conseiller';
 

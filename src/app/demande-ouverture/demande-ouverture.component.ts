@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DemandesOuverturesService } from './demandes-ouvertures.service';
 import { ConseillerService } from '../conseiller/conseiller.service';
-import { Conseiller } from '../create-conseiller/conseiller';
+import { Conseiller } from '../conseiller/create-conseiller/conseiller';
 import { DemandeOuverture } from './demande-ouverture';
 
 @Component({

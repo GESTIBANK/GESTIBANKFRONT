@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DemandesOuverturesService } from '../demande-ouverture/demandes-ouvertures.service';
-import { Client } from '../create-client/client';
+import { Client } from '../client/create-client/client';
 
 @Component({
   selector: 'app-demande-ouverture-assigne',

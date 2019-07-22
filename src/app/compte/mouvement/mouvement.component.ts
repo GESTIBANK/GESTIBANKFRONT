@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MouvementService } from './mouvement.service';
 import { ActivatedRoute } from '@angular/router';
-import { CompteService } from '../compte/compte.service';
+import { CompteService } from '../compte.service';
 
 @Component({
   selector: 'app-mouvement',

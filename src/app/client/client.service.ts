@@ -13,4 +13,11 @@ export class ClientService {
 getConseiller(id) {
 return this.httpClient.get(this.apiUrl + 'client/' + id + '/conseiller');
 }
+
+getListClient() {
+  return this.httpClient.get(this.apiUrl + 'conseiller/client');
+  }
+  getClientById(id) {
+    return this.httpClient.get(this.apiUrl + 'afficherClient/' + id);
+    }
 }

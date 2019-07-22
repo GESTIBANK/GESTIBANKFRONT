@@ -4,7 +4,7 @@ import { LoginService } from '../login/login.service';
 import { Router } from '@angular/router';
 import { ConseillerService } from '../conseiller/conseiller.service';
 import { ClientService } from '../client/client.service';
-import { Conseiller } from '../create-conseiller/conseiller';
+import { Conseiller } from '../conseiller/create-conseiller/conseiller';
 
 @Component({
   selector: 'app-header',

@@ -1,4 +1,4 @@
-import { Conseiller } from '../create-conseiller/conseiller';
+import { Conseiller } from '../../conseiller/create-conseiller/conseiller';
 
 export class Client {
     id: number;

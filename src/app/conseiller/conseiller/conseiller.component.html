@@ -2,7 +2,7 @@
     <div *ngIf="message" [ngClass]="{'alert-success':message}">
         <h1>{{message}}</h1>
     </div>
-
+    <ng-container *ngIf="loadingRouteConfig">Loading route config...</ng-container>
     <table class="table table-striped">
         <thead>
             <tr>

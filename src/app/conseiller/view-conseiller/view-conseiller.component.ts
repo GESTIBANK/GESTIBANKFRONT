@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConseillerService } from '../conseiller/conseiller.service';
+import { ConseillerService } from '../conseiller.service';
 import {   ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class ViewConseillerComponent implements OnInit {
   ngOnInit() {
     console.log(this.route.snapshot.params.id);
     this.conseillerService.getConseillerById(this.route.snapshot.params.id).subscribe(response=>this.conseiller=response)
-    
+
   }
 
 }
