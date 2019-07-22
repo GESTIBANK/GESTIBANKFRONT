@@ -13,11 +13,18 @@ import { Conseiller } from '../create-conseiller/conseiller';
 })
 export class HeaderComponent implements OnInit {
   conseiller: any ;
+  user: any;
    constructor(private clientService: ClientService, private auth: AuthServiceService, private login: LoginService) {
   }
   ngOnInit() {
-    const user = JSON.parse(localStorage.user);
-    this.clientService.getConseiller(user.id).subscribe(result => {this.conseiller = result; console.log(result); });
+   if(localStorage.user){
+     this.user = JSON.parse(localStorage.user);
+      if(this.user.userType!= 'user'){
+    this.clientService.getConseiller(this.user.id).subscribe(result => {this.conseiller = result; console.log(result); });
+    }
+  }else {
+    localStorage.setItem('user', '{"userType": "user"}');
+  }
   }
   logout() {
     this.auth.logout();
